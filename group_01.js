@@ -7,10 +7,10 @@ var arrayBoo = ["Boo", "11435", "54000", 3];
 var arrayScout = ["Scout", "6243", "74750", 5];
 
 // Log the results of makeBonusArray for each employee
-console.log(makeBonusArray(arrayAtticus));
-console.log(makeBonusArray(arrayScout));
-console.log(makeBonusArray(arrayJem));
-console.log(makeBonusArray(arrayBoo));
+document.getElementById("employee 1").innerHTML = formatBonusString(makeBonusArray(arrayAtticus));
+document.getElementById("employee 2").innerHTML = formatBonusString(makeBonusArray(arrayScout));
+document.getElementById("employee 3").innerHTML = formatBonusString(makeBonusArray(arrayJem));
+document.getElementById("employee 4").innerHTML = formatBonusString(makeBonusArray(arrayBoo));
 
 // Takes in an employee array and returns data about their bonus and total adjusted income
 function makeBonusArray(employee){
@@ -67,5 +67,11 @@ function calculateSTI(employee){
 	}
 	return bonus;
 }
+
+function formatBonusString(bonusArray) {
+	return bonusArray[0] + " has a " + Math.round(bonusArray[1] * 100) + "% bonus of $" + bonusArray[3] + " for a total salary of $" + bonusArray[2] + ".";
+}
+
+
 
 
